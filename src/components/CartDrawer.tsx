@@ -22,7 +22,6 @@ export function CartDrawer() {
   const waUrl = `https://wa.me/2348098229807?text=${waMsg}`;
 
   const payWithPaystack = () => {
-    // @ts-expect-error - Paystack injected globally via index head
     const PaystackPop = (window as any).PaystackPop;
     if (!PaystackPop) {
       alert("Paystack is loading. Please try again in a moment.");

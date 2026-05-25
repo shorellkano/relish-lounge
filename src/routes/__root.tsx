@@ -9,6 +9,11 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { WhatsAppWidget } from "@/components/WhatsAppWidget";
+import { CartProvider } from "@/context/CartContext";
+import { CartDrawer } from "@/components/CartDrawer";
 
 function NotFoundComponent() {
   return (
@@ -72,19 +77,46 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Relish Lounge Magodo — Bar, Kitchen & Casino in Magodo Phase 1, Lagos" },
+      { name: "description", content: "Relish Lounge is Magodo's favourite bar, Nigerian restaurant and casino. Cocktails, karaoke nights, authentic Nigerian food. Order online or visit us in Magodo Phase 1." },
+      { name: "author", content: "Relish Lounge" },
+      { property: "og:site_name", content: "Relish Lounge" },
+      { property: "og:title", content: "Relish Lounge Magodo — Bar, Kitchen & Casino" },
+      { property: "og:description", content: "Good food, good vibes, great nights in Magodo Phase 1, Lagos." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      { src: "https://js.paystack.co/v1/inline.js", defer: true },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["BarOrPub", "Restaurant"],
+          name: "Relish Lounge",
+          image: "/og-relish.jpg",
+          telephone: "+2348098229807",
+          servesCuisine: "Nigerian",
+          priceRange: "₦₦",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Gbelegbo Street, Tob Plaza",
+            addressLocality: "Magodo Phase 1, Isheri",
+            addressRegion: "Lagos",
+            addressCountry: "NG",
+          },
+          openingHours: "Mo-Su",
+          sameAs: [
+            "https://www.instagram.com/relishlounge",
+            "https://www.tiktok.com/@relishloungelagos",
+          ],
+        }),
       },
     ],
   }),
@@ -113,7 +145,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <CartProvider>
+        <Navbar />
+        <main className="min-h-screen pt-0">
+          <Outlet />
+        </main>
+        <Footer />
+        <WhatsAppWidget />
+        <CartDrawer />
+      </CartProvider>
     </QueryClientProvider>
   );
 }
