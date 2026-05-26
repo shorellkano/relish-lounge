@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import heroLounge from "@/assets/hero-lounge.jpg";
 import heroKitchen from "@/assets/hero-kitchen.jpg";
+import loungeInterior from "@/assets/lounge-interior.jpg";
 import dishAsun from "@/assets/dish-asun.jpg";
 import dishPepper from "@/assets/dish-peppersoup.jpg";
 import dishIsiewu from "@/assets/dish-isiewu.jpg";
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/gallery")({
 
 type Tag = "all" | "food" | "drinks" | "events" | "lounge";
 const PHOTOS: { src: string; alt: string; tag: Exclude<Tag, "all">; h: string }[] = [
+  { src: loungeInterior, alt: "Relish Lounge interior — vine ceiling, pool table, neon", tag: "lounge", h: "h-[28rem]" },
   { src: dishAsun, alt: "Asun bowl", tag: "food", h: "h-80" },
   { src: barDrinks, alt: "Cocktails at the bar", tag: "drinks", h: "h-96" },
   { src: heroLounge, alt: "Lounge interior", tag: "lounge", h: "h-72" },
