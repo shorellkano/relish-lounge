@@ -1,11 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroLounge from "@/assets/hero-lounge.jpg";
-import loungeInterior from "@/assets/lounge-interior.jpg";
 import barDrinks from "@/assets/bar-drinks.jpg";
 import eventKaraoke from "@/assets/event-karaoke.jpg";
 import { Reveal } from "@/components/Reveal";
-import { AmbientVideo } from "@/components/AmbientVideo";
-import { FEATURED_VIDEO_1 } from "@/data/media";
 import { Wine, Music, Flame, Sparkles, Dice5, Sofa } from "lucide-react";
 
 export const Route = createFileRoute("/lounge")({
@@ -40,11 +37,7 @@ function LoungePage() {
   return (
     <>
       <section className="relative min-h-[80vh] flex items-end overflow-hidden">
-        <AmbientVideo
-          src={FEATURED_VIDEO_1}
-          poster={loungeInterior}
-          alt="Relish Lounge — pool table, neon, hanging vines"
-        />
+        <img src={heroLounge} alt="Relish Lounge bar at night" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/60 to-charcoal/30" />
         <div className="relative max-w-7xl mx-auto px-6 pb-20 pt-32">
           <Reveal>
