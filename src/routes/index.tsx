@@ -109,7 +109,7 @@ function Index() {
             <p className="mt-6 text-cream/70">Whether you are here to eat, to unwind, or to turn up, you belong here.</p>
           </Reveal>
           <Reveal delay={200} className="relative">
-            <img src={heroLounge} alt="Inside Relish Lounge Magodo" className="rounded-2xl shadow-deep object-cover h-[460px] w-full" loading="lazy" />
+            <img src={loungeInterior} alt="Inside Relish Lounge Magodo — vine-draped ceiling, neon and pool table" className="rounded-2xl shadow-deep object-cover h-[460px] w-full" loading="lazy" />
             <div className="absolute -bottom-6 -left-6 bg-amber text-charcoal p-5 rounded-2xl shadow-amber-glow max-w-[200px]">
               <p className="font-display text-2xl leading-none">Open Daily</p>
               <p className="font-label text-[10px] mt-2">Mon to Sun</p>
