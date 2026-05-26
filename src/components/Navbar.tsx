@@ -36,7 +36,7 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <img src={logo} alt="Relish Lounge Magodo logo" className="h-12 w-12 rounded-full object-cover ring-2 ring-amber/60 group-hover:ring-amber transition" />
+          <img src={logo} alt="Relish Lounge Magodo logo" className="h-14 w-auto object-contain transition group-hover:opacity-90" />
           <span className="hidden sm:block">
             <span className="block font-script text-2xl text-amber leading-none">Relish</span>
             <span className="block font-label text-[10px] text-cream/70">Lounge & Kitchen</span>
