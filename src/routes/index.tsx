@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Link } from "@tanstack/react-router";
 import heroLounge from "@/assets/hero-lounge.jpg";
 import heroKitchen from "@/assets/hero-kitchen.jpg";
+import loungeInterior from "@/assets/lounge-interior.jpg";
 import dishAsun from "@/assets/dish-asun.jpg";
 import dishPepper from "@/assets/dish-peppersoup.jpg";
 import dishIsiewu from "@/assets/dish-isiewu.jpg";
@@ -10,6 +11,8 @@ import barDrinks from "@/assets/bar-drinks.jpg";
 import eventKaraoke from "@/assets/event-karaoke.jpg";
 import { Reveal } from "@/components/Reveal";
 import { formatNaira } from "@/data/menu";
+import { AmbientVideo } from "@/components/AmbientVideo";
+import { AMBIENT_LOUNGE_VIDEO } from "@/data/media";
 import { MessageCircle, UtensilsCrossed, Wine } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -36,7 +39,11 @@ function Index() {
     <>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        <img src={heroLounge} alt="Relish Lounge interior with warm amber candlelight" className="absolute inset-0 w-full h-full object-cover" />
+        <AmbientVideo
+          src={AMBIENT_LOUNGE_VIDEO}
+          poster={loungeInterior}
+          alt="Relish Lounge interior — hanging foliage, warm globe lights, neon glow"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/40 via-charcoal/70 to-charcoal" />
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/80 via-transparent to-transparent" />
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 pt-32 pb-20">
