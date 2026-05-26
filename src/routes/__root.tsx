@@ -81,10 +81,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Relish Lounge is Magodo's favourite bar, Nigerian restaurant and casino. Cocktails, karaoke nights, authentic Nigerian food. Order online or visit us in Magodo Phase 1." },
       { name: "author", content: "Relish Lounge" },
       { property: "og:site_name", content: "Relish Lounge" },
-      { property: "og:title", content: "Relish Lounge Magodo — Bar, Kitchen & Casino" },
-      { property: "og:description", content: "Good food, good vibes, great nights in Magodo Phase 1, Lagos." },
+      { property: "og:title", content: "Relish Lounge Magodo — Bar, Kitchen & Casino in Magodo Phase 1, Lagos" },
+      { property: "og:description", content: "Relish Lounge is Magodo's favourite bar, Nigerian restaurant and casino. Cocktails, karaoke nights, authentic Nigerian food. Order online or visit us in Magodo Phase 1." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Relish Lounge Magodo — Bar, Kitchen & Casino in Magodo Phase 1, Lagos" },
+      { name: "twitter:description", content: "Relish Lounge is Magodo's favourite bar, Nigerian restaurant and casino. Cocktails, karaoke nights, authentic Nigerian food. Order online or visit us in Magodo Phase 1." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bf6dd9b0-b794-4e37-9eba-bcf845eff1bb/id-preview-293ce2e5--65541a3b-1568-41a1-ac62-ddb5eff67f1d.lovable.app-1779762862368.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bf6dd9b0-b794-4e37-9eba-bcf845eff1bb/id-preview-293ce2e5--65541a3b-1568-41a1-ac62-ddb5eff67f1d.lovable.app-1779762862368.png" },
     ],
     links: [
       {
