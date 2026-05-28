@@ -23,15 +23,15 @@ function MenuPage() {
 
   return (
     <>
-      <section className="pt-32 pb-12 bg-teal-deep">
+      <section className="pt-24 pb-6 sm:pt-32 sm:pb-12 bg-teal-deep">
         <div className="max-w-7xl mx-auto px-6">
-          <p className="font-label text-xs text-amber mb-3">Menu & Order</p>
-          <h1 className="font-display text-5xl sm:text-6xl text-cream max-w-3xl">Browse, build your <span className="italic text-amber">order</span>, and check out.</h1>
-          <p className="mt-5 text-cream/70 max-w-xl">Tap the plus on any item to add it to your cart. Pay with Paystack, Opay, or WhatsApp.</p>
+          <p className="font-label text-xs text-amber mb-2 sm:mb-3">Menu & Order</p>
+          <h1 className="font-display text-3xl sm:text-6xl text-cream max-w-3xl">Browse, build your <span className="italic text-amber">order</span>, and check out.</h1>
+          <p className="mt-3 sm:mt-5 text-cream/70 max-w-xl text-sm sm:text-base hidden sm:block">Tap the plus on any item to add it to your cart. Pay with Paystack, Opay, or WhatsApp.</p>
         </div>
       </section>
 
-      <section className="py-12">
+      <section className="py-6 sm:py-12">
         <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-[260px_1fr] gap-10">
           {/* Sidebar */}
           <aside className="lg:sticky lg:top-28 lg:self-start">
@@ -55,17 +55,17 @@ function MenuPage() {
 
           {/* Items */}
           <div>
-            <h2 className="font-display text-4xl text-amber mb-6">{cat.name}</h2>
-            <ul className="grid sm:grid-cols-2 gap-4">
+            <h2 className="font-display text-2xl sm:text-4xl text-amber mb-4 sm:mb-6">{cat.name}</h2>
+            <ul className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {cat.items.map((it) => (
-                <li key={it.name} className="flex items-center justify-between gap-4 p-5 bg-card border border-amber/15 rounded-xl hover:border-amber/50 transition">
-                  <div>
-                    <p className="text-cream">{it.name}</p>
+                <li key={it.name} className="flex items-center justify-between gap-3 p-3 sm:p-5 bg-card border border-amber/15 rounded-xl hover:border-amber/50 transition">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-cream text-sm sm:text-base truncate">{it.name}</p>
                     <p className="text-amber font-label text-xs mt-1">{it.note ? it.note + " " : ""}{formatNaira(it.price)}</p>
                   </div>
                   <button
                     onClick={() => { add(it.name, it.price); setOpen(true); }}
-                    className="h-10 w-10 grid place-items-center rounded-full gradient-amber text-charcoal hover:scale-110 transition shrink-0"
+                    className="h-11 w-11 grid place-items-center rounded-full gradient-amber text-charcoal hover:scale-110 transition shrink-0 shadow-amber-glow"
                     aria-label={`Add ${it.name}`}
                   >
                     <Plus className="h-5 w-5" />

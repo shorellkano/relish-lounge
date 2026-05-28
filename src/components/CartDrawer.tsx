@@ -4,7 +4,7 @@ import { useCart } from "@/context/CartContext";
 import { formatNaira } from "@/data/menu";
 
 // Paystack: insert your public key below (test or live). Get from https://dashboard.paystack.com/#/settings/developer
-const PAYSTACK_PUBLIC_KEY = "pk_test_xxxxxxxxxxxxxxxxxxxxxxxxxx";
+const PAYSTACK_PUBLIC_KEY = "pk_test_9abc79e3697b03481a56180d257fe5c4a148e4aa";
 const OPAY_MERCHANT_NOTE = "Send your payment to OPAY: 08098229807 (Relish Lounge). After paying, send screenshot via WhatsApp.";
 
 type Step = "cart" | "details" | "pay" | "done";
