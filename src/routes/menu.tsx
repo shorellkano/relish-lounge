@@ -58,18 +58,22 @@ function MenuPage() {
             <h2 className="font-display text-2xl sm:text-4xl text-amber mb-4 sm:mb-6">{cat.name}</h2>
             <ul className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {cat.items.map((it) => (
-                <li key={it.name} className="flex items-center justify-between gap-3 p-3 sm:p-5 bg-card border border-amber/15 rounded-xl hover:border-amber/50 transition">
-                  <div className="min-w-0 flex-1">
-                    <p className="text-cream text-sm sm:text-base truncate">{it.name}</p>
+                <li key={it.name} className="p-3 sm:p-5 bg-card border border-amber/15 rounded-xl hover:border-amber/50 transition">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="min-w-0 flex-1 w-full sm:w-auto">
+                    <p className="text-cream text-sm sm:text-base leading-snug sm:truncate">{it.name}</p>
                     <p className="text-amber font-label text-xs mt-1">{it.note ? it.note + " " : ""}{formatNaira(it.price)}</p>
+                    </div>
+                    <button
+                      onClick={() => { add(it.name, it.price); setOpen(true); }}
+                      className="inline-flex h-10 w-fit items-center gap-2 self-start rounded-full gradient-amber px-4 text-cream transition hover:scale-105 shadow-amber-glow sm:h-11 sm:w-11 sm:justify-center sm:self-auto sm:px-0"
+                      aria-label={`Add ${it.name}`}
+                    >
+                      <span className="text-lg leading-none font-semibold sm:hidden">+</span>
+                      <span className="font-label text-[10px] sm:hidden">Add</span>
+                      <Plus className="hidden h-5 w-5 sm:block" />
+                    </button>
                   </div>
-                  <button
-                    onClick={() => { add(it.name, it.price); setOpen(true); }}
-                    className="h-11 w-11 grid place-items-center rounded-full gradient-amber text-charcoal hover:scale-110 transition shrink-0 shadow-amber-glow"
-                    aria-label={`Add ${it.name}`}
-                  >
-                    <Plus className="h-5 w-5" />
-                  </button>
                 </li>
               ))}
             </ul>
