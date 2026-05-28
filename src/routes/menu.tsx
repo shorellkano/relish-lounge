@@ -58,19 +58,21 @@ function MenuPage() {
             <h2 className="font-display text-2xl sm:text-4xl text-amber mb-4 sm:mb-6">{cat.name}</h2>
             <ul className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {cat.items.map((it) => (
-                <li key={it.name} className="flex flex-col items-start gap-3 p-3 sm:flex-row sm:items-center sm:justify-between sm:p-5 bg-card border border-amber/15 rounded-xl hover:border-amber/50 transition">
-                  <div className="min-w-0 flex-1 w-full sm:w-auto">
+                <li key={it.name} className="p-3 sm:p-5 bg-card border border-amber/15 rounded-xl hover:border-amber/50 transition">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="min-w-0 flex-1 w-full sm:w-auto">
                     <p className="text-cream text-sm sm:text-base leading-snug sm:truncate">{it.name}</p>
                     <p className="text-amber font-label text-xs mt-1">{it.note ? it.note + " " : ""}{formatNaira(it.price)}</p>
+                    </div>
+                    <button
+                      onClick={() => { add(it.name, it.price); setOpen(true); }}
+                      className="w-full sm:w-11 h-11 inline-flex items-center justify-center gap-2 rounded-full gradient-amber text-charcoal hover:scale-110 transition shrink-0 shadow-amber-glow"
+                      aria-label={`Add ${it.name}`}
+                    >
+                      <Plus className="h-5 w-5" />
+                      <span className="font-label text-[10px] sm:hidden">Add to order</span>
+                    </button>
                   </div>
-                  <button
-                    onClick={() => { add(it.name, it.price); setOpen(true); }}
-                    className="self-end sm:self-auto h-11 min-w-11 px-3 sm:w-11 sm:px-0 inline-flex items-center justify-center gap-1 rounded-full gradient-amber text-charcoal hover:scale-110 transition shrink-0 shadow-amber-glow"
-                    aria-label={`Add ${it.name}`}
-                  >
-                    <Plus className="h-5 w-5" />
-                    <span className="font-label text-[10px] sm:hidden">Add</span>
-                  </button>
                 </li>
               ))}
             </ul>
