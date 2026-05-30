@@ -1,14 +1,16 @@
 import { defineConfig } from 'vite'
-import { tanstackStart } from '@lovable.dev/vite-tanstack-config'
+import react from '@vitejs/plugin-react'
+import path from 'path'
 
 export default defineConfig({
-  plugins: [
-    tanstackStart({
-      server: { entry: 'server' }
-    })
-  ],
+  plugins: [react()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
   build: {
-    outDir: 'dist/client',
+    outDir: 'dist',
     emptyOutDir: true
   }
 })
