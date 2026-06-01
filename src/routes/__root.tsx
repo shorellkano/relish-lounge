@@ -26,6 +26,11 @@ function NotFoundComponent() {
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          >
+            Go home
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
@@ -83,12 +88,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bf6dd9b0-b794-4e37-9eba-bcf845eff1bb/id-preview-293ce2e5--65541a3b-1568-41a1-ac62-ddb5eff67f1d.lovable.app-1779762862368.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/bf6dd9b0-b794-4e37-9eba-bcf845eff1bb/id-preview-293ce2e5--65541a3b-1568-41a1-ac62-ddb5eff67f1d.lovable.app-1779762862368.png" },
     ],
-    links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
-    ],
+    links: [],
     scripts: [
       { src: "https://js.paystack.co/v1/inline.js", defer: true },
       {
