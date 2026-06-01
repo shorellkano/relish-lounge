@@ -1,12 +1,11 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
 /* Relish Lounge design system — dark, warm, atmospheric. */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600;700&display=swap');
 
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
@@ -72,7 +71,6 @@
   --charcoal: oklch(0.17 0.005 60);
   --cream: oklch(0.96 0.012 80);
   --whatsapp: oklch(0.68 0.16 145);
-
   --background: var(--charcoal);
   --foreground: var(--cream);
   --card: oklch(0.21 0.01 60);
@@ -111,7 +109,6 @@
   * {
     border-color: var(--color-border);
   }
-
   body {
     background: radial-gradient(ellipse at top, oklch(0.22 0.03 195) 0%, var(--color-background) 55%);
     background-attachment: fixed;
@@ -119,7 +116,6 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
   }
-
   h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.01em; }
   .font-script { font-family: var(--font-script); }
   .font-label { font-family: var(--font-label); letter-spacing: 0.18em; text-transform: uppercase; }
@@ -134,21 +130,16 @@
   .bg-amber { background-color: var(--color-amber); }
   .border-amber { border-color: var(--color-amber); }
   .bg-whatsapp { background-color: var(--color-whatsapp); }
-
   .gradient-amber { background-image: linear-gradient(135deg, var(--color-amber) 0%, var(--color-amber-glow) 100%); }
   .gradient-dark-warm { background-image: linear-gradient(160deg, var(--color-teal-deep) 0%, var(--color-charcoal) 60%, oklch(0.2 0.04 50) 100%); }
   .gradient-overlay { background-image: linear-gradient(180deg, oklch(0.1 0.01 60 / 0.4) 0%, oklch(0.12 0.01 60 / 0.85) 100%); }
-
   .shadow-amber-glow { box-shadow: 0 10px 40px -10px oklch(0.74 0.17 65 / 0.45); }
   .shadow-deep { box-shadow: 0 20px 60px -20px oklch(0 0 0 / 0.6); }
-
   /* Diagonal section transition */
   .clip-diagonal-top { clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%); }
   .clip-diagonal-bottom { clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); }
-
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
   .reveal.in-view { opacity: 1; transform: translateY(0); }
-
   @keyframes pulse-ring {
     0% { box-shadow: 0 0 0 0 oklch(0.68 0.16 145 / 0.7); }
     70% { box-shadow: 0 0 0 18px oklch(0.68 0.16 145 / 0); }
