@@ -1,7 +1,7 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700&family=Lato:wght@300;400;700&family=Dancing+Script:wght@600;700&display=swap');
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -63,7 +63,6 @@
 
 :root {
   --radius: 0.625rem;
-  /* Brand palette */
   --teal: oklch(0.28 0.045 195);
   --teal-deep: oklch(0.22 0.04 195);
   --amber: oklch(0.74 0.17 65);
@@ -135,7 +134,6 @@
   .gradient-overlay { background-image: linear-gradient(180deg, oklch(0.1 0.01 60 / 0.4) 0%, oklch(0.12 0.01 60 / 0.85) 100%); }
   .shadow-amber-glow { box-shadow: 0 10px 40px -10px oklch(0.74 0.17 65 / 0.45); }
   .shadow-deep { box-shadow: 0 20px 60px -20px oklch(0 0 0 / 0.6); }
-  /* Diagonal section transition */
   .clip-diagonal-top { clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%); }
   .clip-diagonal-bottom { clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%); }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.9s ease, transform 0.9s ease; }
