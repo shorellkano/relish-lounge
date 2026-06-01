@@ -1,12 +1,26 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { QueryClient } from '@tanstack/react-query'
 import { RouterProvider, createRouter } from '@tanstack/react-router'
 import { routeTree } from './routeTree.gen'
 
-// Create router
+// Create a query client
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 5 * 60 * 1000, // 5 minutes
+    },
+  },
+})
+
+// Create router instance with context
 const router = createRouter({ 
   routeTree,
-  basepath: '/'
+  defaultPreload: 'intent',
+  defaultPreloadStaleTime: 0,
+  context: {
+    queryClient,
+  },
 })
 
 // Register router for TypeScript
@@ -16,15 +30,13 @@ declare module '@tanstack/react-router' {
   }
 }
 
-// Mount the app
+// Render the app
 const rootElement = document.getElementById('root')
 
 if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(
-    <React.StrictMode>
+  createRoot(rootElement).render(
+    <StrictMode>
       <RouterProvider router={router} />
-    </React.StrictMode>
+    </StrictMode>
   )
-} else {
-  console.error('No root element found')
 }
